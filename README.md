@@ -32,6 +32,8 @@ Only finished plugins are listed in `marketplace.json`. Add a plugin there when 
 
 ## Install
 
+Students: follow the full [Student Setup Guide](STUDENT_SETUP.md) (Node.js, Claude Code, plugins, Playwright, Jira).
+
 From a local clone:
 
 ```
