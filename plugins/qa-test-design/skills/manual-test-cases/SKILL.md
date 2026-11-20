@@ -43,9 +43,9 @@ Work from whatever the user gives: a user story, acceptance criteria, a Jira tic
 Default to a Markdown table per section (see the template). If the user asks for CSV, TestRail, Xray, Zephyr or Gherkin, use the matching format from `references/test-case-template.md`.
 
 End with:
-- **Traceability matrix**
+- **Traceability matrix** — its last column is **Test Designed** (✅ = at least one test case is written for the requirement, ❌ = none yet). It shows design coverage only, never execution status. Do not call this column "Covered", "Passed" or "Tested", which suggest the tests have been run.
 - **Open questions / assumptions**
-- **Coverage summary**: count of cases by type and priority
+- **Test case summary**: count of designed cases by type and priority
 
 See `references/examples.md` for a complete worked example.
 

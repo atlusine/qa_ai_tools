@@ -52,7 +52,7 @@ Use `Scenario Outline` with `Examples` when cases differ only in data.
 
 ## Traceability matrix
 
-| Requirement | Description | Test Cases | Covered |
+| Requirement | Description | Test Cases | Test Designed |
 |-------------|-------------|------------|---------|
 | AC-1 | ... | TC-001, TC-004 | ✅ |
 | AC-2 | ... | — | ❌ |

@@ -49,7 +49,7 @@
 
 ## Traceability matrix
 
-| Requirement | Test Cases | Covered |
+| Requirement | Test Cases | Test Designed |
 |-------------|------------|---------|
 | AC-1 | TC-001 | ✅ |
 | AC-2 | TC-002, TC-005 | ✅ |
@@ -63,7 +63,7 @@
 - Is there rate limiting on reset requests?
 - Are active sessions logged out after a password change?
 
-## Coverage summary
+## Test case summary
 
 | Type | High | Medium | Low | Total |
 |------|------|--------|-----|-------|
