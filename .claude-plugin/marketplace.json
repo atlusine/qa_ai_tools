@@ -15,6 +15,14 @@
       "version": "0.1.0",
       "category": "testing",
       "keywords": ["qa", "test-design", "manual-testing", "test-cases"]
+    },
+    {
+      "name": "qa-bug-investigation",
+      "source": "./plugins/qa-bug-investigation",
+      "description": "Write clear, reproducible bug reports in Jira format, created only after user approval.",
+      "version": "0.1.0",
+      "category": "testing",
+      "keywords": ["qa", "bugs", "bug-report", "jira", "investigation"]
     }
   ]
 }
