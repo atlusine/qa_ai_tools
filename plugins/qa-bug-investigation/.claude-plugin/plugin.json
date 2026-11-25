@@ -1,9 +1,9 @@
 {
   "name": "qa-bug-investigation",
-  "version": "0.0.1",
-  "description": "Investigate, reproduce and report bugs. (Lesson 3 — not yet implemented.)",
+  "version": "0.1.0",
+  "description": "Write clear, reproducible bug reports in Jira format, created only after user approval.",
   "author": {
     "name": "Lusine"
   },
-  "keywords": ["qa", "bugs", "investigation"]
+  "keywords": ["qa", "bugs", "bug-report", "jira", "investigation"]
 }

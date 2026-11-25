@@ -15,7 +15,12 @@ qa-ai-tools/
 │   │       └── manual-test-cases/
 │   │           ├── SKILL.md
 │   │           └── references/       # templates, techniques, examples
-│   ├── qa-bug-investigation/         # Lesson 3 (later)
+│   ├── qa-bug-investigation/         # Lesson 3
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/
+│   │       └── bug-report/
+│   │           ├── SKILL.md
+│   │           └── references/       # Jira template, worked example
 │   └── qa-automation/                # Lessons 4–5: skills + agents/
 └── README.md
 ```
@@ -25,7 +30,7 @@ qa-ai-tools/
 | Plugin | Status | What it does |
 |--------|--------|--------------|
 | `qa-test-design` | ✅ Ready | `manual-test-cases` skill: designs manual test cases from requirements using EP, BVA, decision tables and state transitions, with a traceability matrix |
-| `qa-bug-investigation` | 🚧 Lesson 3 | Bug investigation and reporting |
+| `qa-bug-investigation` | ✅ Ready | `bug-report` skill: writes reproducible bug reports in Jira format with an `[FE]`/`[BE]`/`[UI]` title prefix and severity; asks for missing required information and creates the bug only after explicit approval |
 | `qa-automation` | 🚧 Lessons 4–5 | Test automation skills and agents |
 
 Only finished plugins are listed in `marketplace.json`. Add a plugin there when it has content.
@@ -39,6 +44,7 @@ From a local clone:
 ```
 /plugin marketplace add /path/to/qa_ai_tools
 /plugin install qa-test-design@qa-ai-tools
+/plugin install qa-bug-investigation@qa-ai-tools
 ```
 
 From a Git remote:
@@ -46,6 +52,7 @@ From a Git remote:
 ```
 /plugin marketplace add <git-url-or-owner/repo>
 /plugin install qa-test-design@qa-ai-tools
+/plugin install qa-bug-investigation@qa-ai-tools
 ```
 
 ## Usage
@@ -55,6 +62,8 @@ Ask Claude something like:
 - "Write test cases for this user story: …"
 - "What should I test for JIRA-123?"
 - "Give me test cases for the login form as CSV for TestRail"
+- "Write a bug report: the total stays discounted after I remove the coupon"
+- "Turn these notes into a Jira bug: …"
 
 ## Adding a plugin
 
