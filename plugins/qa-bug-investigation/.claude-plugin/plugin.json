@@ -1,7 +1,7 @@
 {
   "name": "qa-bug-investigation",
-  "version": "0.0.1",
-  "description": "Investigate, reproduce and report bugs. (Lesson 3 — not yet implemented.)",
+  "version": "0.1.0",
+  "description": "Reproduce bugs in the browser and write clear bug reports with screenshots.",
   "author": {
     "name": "Lusine"
   },

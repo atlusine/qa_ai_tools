@@ -15,6 +15,14 @@
       "version": "0.1.0",
       "category": "testing",
       "keywords": ["qa", "test-design", "manual-testing", "test-cases"]
+    },
+    {
+      "name": "qa-bug-investigation",
+      "source": "./plugins/qa-bug-investigation",
+      "description": "Reproduce bugs in the browser and write clear bug reports with screenshots.",
+      "version": "0.1.0",
+      "category": "testing",
+      "keywords": ["qa", "bugs", "bug-report", "investigation"]
     }
   ]
 }
