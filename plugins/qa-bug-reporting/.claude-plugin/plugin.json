@@ -1,0 +1,9 @@
+{
+  "name": "qa-bug-reporting",
+  "version": "0.0.1",
+  "description": "Write clear, structured bug reports.",
+  "author": {
+    "name": "Hasmik"
+  },
+  "keywords": ["qa", "bugs", "reporting"]
+}

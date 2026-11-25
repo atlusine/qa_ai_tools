@@ -15,6 +15,14 @@
       "version": "0.1.0",
       "category": "testing",
       "keywords": ["qa", "test-design", "manual-testing", "test-cases"]
+    },
+    {
+      "name": "qa-bug-reporting",
+      "source": "./plugins/qa-bug-reporting",
+      "description": "Report bugs in Jira or artifacts from test notes or artifacts.",
+      "version": "0.1.0",
+      "category": "testing",
+      "keywords": ["qa", "bug-reporting", "jira"]
     }
   ]
 }
