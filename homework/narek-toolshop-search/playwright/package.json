@@ -1,0 +1,17 @@
+{
+  "name": "narek-toolshop-search-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for SCRUM-7 Toolshop product search",
+  "scripts": {
+    "test": "playwright test",
+    "test:twice": "playwright test --repeat-each=2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6"
+  }
+}
