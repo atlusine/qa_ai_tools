@@ -22,6 +22,13 @@ qa-ai-tools/
 │   │           ├── SKILL.md
 │   │           └── references/       # Jira template, worked example
 │   └── qa-automation/                # Lessons 4–5: skills + agents/
+├── toolshop-automation/              # Playwright E2E framework for practicesoftwaretesting.com
+│   ├── CLAUDE.md                     # routes to rules / skills / commands / agents
+│   ├── .claude/                      # settings.json (hooks + permissions), rules, skills, commands, agents
+│   ├── scripts/claude-hooks/         # session-context · validate-edit · review-diff
+│   ├── tests/{smoke,regression}/     # 10 test cases (TC01–TC10)
+│   ├── module_object/  flows/  support/
+│   └── playwright.config.js
 └── README.md
 ```
 
@@ -64,6 +71,17 @@ Ask Claude something like:
 - "Give me test cases for the login form as CSV for TestRail"
 - "Write a bug report: the total stays discounted after I remove the coupon"
 - "Turn these notes into a Jira bug: …"
+
+## Automation framework (`toolshop-automation/`)
+
+A Playwright (JavaScript) test suite for the course's practice app, with its own Claude Code setup. Start Claude **inside** the folder so its `CLAUDE.md`, hooks, and permissions load:
+
+```bash
+cd toolshop-automation
+npm install && npx playwright install chromium && cp .env.example .env
+npx playwright test            # or: npx playwright test --grep @smoke
+claude                         # then: /generate-test, /investigate-failure, /test-review
+```
 
 ## Adding a plugin
 

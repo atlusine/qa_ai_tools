@@ -1,0 +1,10 @@
+node_modules/
+.env
+report/
+test-results/
+test-reports/
+blob-report/
+.DS_Store
+
+# Claude Code — share the team configuration, keep personal settings out
+.claude/settings.local.json
