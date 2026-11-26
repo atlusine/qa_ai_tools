@@ -78,7 +78,7 @@ A Playwright (JavaScript) test suite for the course's practice app, with its own
 
 ```bash
 cd toolshop-automation
-npm install && npx playwright install chromium && cp .env.example .env
+npm install && npx playwright install chromium && cp .env.example .env   # then set USER_PASSWORD in .env
 npx playwright test            # or: npx playwright test --grep @smoke
 claude                         # then: /generate-test, /investigate-failure, /test-review
 ```

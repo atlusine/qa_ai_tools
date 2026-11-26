@@ -12,6 +12,7 @@
 set -uo pipefail
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
 cd "$ROOT" || exit 1
+. "$ROOT/scripts/claude-hooks/credentials-pattern.sh"
 
 BASE_BRANCH=${BASE_BRANCH:-main}
 MODE="range"
@@ -93,7 +94,7 @@ for f in "${FILES[@]}"; do
     tests/*.spec.js)
       scan "$f" '(^[0-9]+:|[^.])expect\(|expect\.poll' BLOCK "Assertion in a spec. Move it into an assert_* method on the module object (rules/assertions.md)."
       scan "$f" 'page\.goto\(' BLOCK "page.goto in a spec. Use an open_* module-object method."
-      scan "$f" '@practicesoftwaretesting\.com|welcome01' BLOCK "Hardcoded account or password. Read it from support/users.js."
+      scan "$f" "$CREDENTIALS_PATTERN" BLOCK "Hardcoded account or password. Read it from support/users.js."
       while IFS= read -r hit; do
         [ -n "$hit" ] && report BLOCK "$f" "$hit" "Test title longer than 85 characters."
       done < <(added_lines "$f" | awk -F'"' '/test\("/ { if (length($2) > 85) print }' || true)

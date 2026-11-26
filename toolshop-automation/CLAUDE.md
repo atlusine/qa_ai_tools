@@ -54,7 +54,7 @@ For test *design* (which cases to write), use the `qa-test-design` plugin's `man
 ## Commands
 
 ```bash
-npm install && npx playwright install chromium && cp .env.example .env   # once
+npm install && npx playwright install chromium && cp .env.example .env   # once, then set USER_PASSWORD in .env
 npx playwright test                                # everything (10 tests, ~10 s)
 npx playwright test --grep @smoke                  # smoke suite only
 npx playwright test tests/regression/regression_test_guest_cart.spec.js

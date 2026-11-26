@@ -18,7 +18,7 @@ If you can't reach the app, say so and stop. Don't fill the gap from memory, and
 | Login is `POST /users/login`                                                         | `LoginPage.submit_credentials` captures it                                      |
 | Category checkboxes have generated ULID test ids                                     | Located by role + label (`SELECTORS.categoryCheckbox`)                          |
 | The cart's remove button has no `data-test`                                          | The single `by_css_without_test_id` selector                                    |
-| Demo accounts: `customer@`, `customer2@`, `admin@practicesoftwaretesting.com`, password `welcome01` | Shared by everyone. Read-only use; never test lockout with them           |
+| Demo accounts: `customer@`, `customer2@`, `admin@practicesoftwaretesting.com`, password in `USER_PASSWORD` (`.env`) | Shared by everyone. Read-only use; never test lockout with them           |
 | Logged-in contact form hides name/email fields                                       | Contact tests behave differently for guest vs. customer                         |
 
 ## Finding a bug
