@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Quiet Feed (fixture)</title>
+    <link>https://quiet.example.net/</link>
+    <description>Only old stories</description>
+    <item>
+      <title>Last week's model release</title>
+      <link>https://quiet.example.net/last-week</link>
+      <pubDate>Wed, 18 Nov 2026 09:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Two days ago: dataset update</title>
+      <link>https://quiet.example.net/dataset</link>
+      <pubDate>Mon, 23 Nov 2026 07:59:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

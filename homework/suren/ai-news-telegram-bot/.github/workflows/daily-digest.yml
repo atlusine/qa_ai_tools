@@ -1,0 +1,49 @@
+name: Daily AI news digest
+
+on:
+  schedule:
+    # Cron is always UTC. 05:00 UTC = 09:00 in Yerevan (Asia/Yerevan is UTC+4, no daylight saving).
+    # To change it: new UTC hour = desired Yerevan hour - 4 (e.g. 08:30 Yerevan -> "30 4 * * *").
+    # GitHub may start scheduled runs a few minutes late; schedules only run from the default branch.
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+    inputs:
+      preview:
+        description: "Preview only: print the digest in the log and do not send it to Telegram"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Preview digest (no Telegram)
+        if: ${{ inputs.preview }}
+        run: python -m news_digest --preview
+
+      - name: Build and send digest
+        if: ${{ !inputs.preview }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m news_digest

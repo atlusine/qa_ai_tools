@@ -1,0 +1,10 @@
+[project]
+name = "ai-news-telegram-bot"
+version = "1.0.0"
+description = "Daily AI news digest and CI/GitHub notifications delivered to Telegram"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+junit_suite_name = "ai-news-telegram-bot"

@@ -1,0 +1,10 @@
+# AI news feeds used by the daily digest.
+# Format: one feed per line, either "Display name | URL" or just "URL".
+# Lines starting with # are ignored. Override the whole list with the
+# RSS_FEEDS environment variable (same format, separated by newlines or ";").
+TechCrunch AI | https://techcrunch.com/category/artificial-intelligence/feed/
+The Verge AI | https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+MIT Technology Review AI | https://www.technologyreview.com/topic/artificial-intelligence/feed
+Ars Technica AI | https://arstechnica.com/ai/feed/
+WIRED AI | https://www.wired.com/feed/tag/ai/latest/rss
+Hugging Face Blog | https://huggingface.co/blog/feed.xml
