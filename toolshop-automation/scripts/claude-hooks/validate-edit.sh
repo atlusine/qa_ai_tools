@@ -25,6 +25,7 @@ case "$rel" in
   *) exit 0 ;;
 esac
 cd "$ROOT" || exit 0
+. "$ROOT/scripts/claude-hooks/credentials-pattern.sh"
 
 added=$(git diff -U0 HEAD -- "$rel" 2>/dev/null | awk '
   /^@@/ { split($3, a, ","); ln = a[1]; sub(/^\+/, "", ln); next }
@@ -61,7 +62,7 @@ case "$rel" in
   tests/*)
     check '(^|[^.])expect\(|expect\.poll'           "assertion in a spec. Move it into an assert_* method on the module object (rules/assertions.md)."
     check 'page\.goto\('                             "page.goto in a spec. Use an open_* module-object method (it uses domcontentloaded; the default load event never fires on this app)."
-    check '@practicesoftwaretesting\.com|welcome01'  "hardcoded account or password. Read it from support/users.js (rules/testing-standards.md)."
+    check "$CREDENTIALS_PATTERN"                     "hardcoded account or password. Read it from support/users.js (rules/testing-standards.md)."
     check '(test|it)\("[^"]{86,}"'                   "test title longer than 85 characters (rules/testing-standards.md)."
     ;;
 esac
