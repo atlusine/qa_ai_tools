@@ -11,6 +11,7 @@ GitHub: [@surenarzanyan511-blip](https://github.com/surenarzanyan511-blip)
 | # | Assignment | Folder | Branch |
 |---|------------|--------|--------|
 | 1 | Telegram AI news bot: daily digest, CI result and PR-merged notifications, on-demand button | [`ai-news-telegram-bot/`](ai-news-telegram-bot/) | `homework/suren-telegram-ai-news` |
+| 2 | QA roles plugin: tester agents built on a shared `qa-core` skill (structure only) | [`suren-qa-roles/`](suren-qa-roles/) | `homework/suren-qa-roles` |
 
 ## Contributions outside this folder
 
