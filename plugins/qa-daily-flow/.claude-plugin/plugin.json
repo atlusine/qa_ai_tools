@@ -1,0 +1,9 @@
+{
+  "name": "qa-daily-flow",
+  "version": "0.1.0",
+  "description": "Daily QA flow: run the manual smoke suite in the browser and send the results as a report.",
+  "author": {
+    "name": "Shoghik Manucharyan"
+  },
+  "keywords": ["qa", "smoke-tests", "daily", "report"]
+}
