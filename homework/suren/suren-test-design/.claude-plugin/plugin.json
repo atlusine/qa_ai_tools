@@ -1,0 +1,9 @@
+{
+  "name": "suren-test-design",
+  "version": "0.0.1",
+  "description": "Test design and execution by testing type (API, smoke, UAT, exploratory), with one tester agent per type built on a shared qa-core skill. Content in progress.",
+  "author": {
+    "name": "Suren"
+  },
+  "keywords": ["qa", "testing", "test-design", "agents", "test-approaches"]
+}

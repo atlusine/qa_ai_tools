@@ -1,0 +1,9 @@
+{
+  "name": "suren-bug-investigation",
+  "version": "0.0.1",
+  "description": "Bug investigation by testing type (API, smoke, UAT, exploratory) on a shared bug-core skill that reads the Jira fields a Bug needs and puts the rest in the description. Report text comes from qa-bug-investigation:bug-report.",
+  "author": {
+    "name": "Suren"
+  },
+  "keywords": ["qa", "bug-investigation"]
+}

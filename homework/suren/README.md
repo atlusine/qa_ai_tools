@@ -11,7 +11,10 @@ GitHub: [@surenarzanyan511-blip](https://github.com/surenarzanyan511-blip)
 | # | Assignment | Folder | Branch |
 |---|------------|--------|--------|
 | 1 | Telegram AI news bot: daily digest, CI result and PR-merged notifications, on-demand button | [`ai-news-telegram-bot/`](ai-news-telegram-bot/) | `homework/suren-telegram-ai-news` |
-| 2 | QA roles plugin: tester agents built on a shared `qa-core` skill (structure only) | [`suren-qa-roles/`](suren-qa-roles/) | `homework/suren-qa-roles` |
+| 2 | My QA plugins, the same split as the course plugins (structure only): | | `homework/suren-qa-roles` |
+|   | Test design: testing types (API, smoke, UAT, exploratory) on a shared `qa-core` skill | [`suren-test-design/`](suren-test-design/) | |
+|   | Bug investigation: `bug-core` (Jira fields + flow) and one bug skill per testing type | [`suren-bug-investigation/`](suren-bug-investigation/) | |
+|   | Automation (empty, for later) | [`suren-automation/`](suren-automation/) | |
 
 ## Contributions outside this folder
 

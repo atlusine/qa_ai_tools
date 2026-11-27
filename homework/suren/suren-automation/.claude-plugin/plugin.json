@@ -1,0 +1,9 @@
+{
+  "name": "suren-automation",
+  "version": "0.0.1",
+  "description": "Test automation skills and agents: writing, reviewing and stabilising automated tests. (Not yet implemented.)",
+  "author": {
+    "name": "Suren"
+  },
+  "keywords": ["qa", "automation"]
+}

@@ -1,9 +1,0 @@
-{
-  "name": "suren-qa-roles",
-  "version": "0.0.1",
-  "description": "Four tester agents (API, smoke, UAT, exploratory) built on one shared QA core skill. Structure only; content in progress.",
-  "author": {
-    "name": "Suren"
-  },
-  "keywords": ["qa", "testing", "roles", "agents", "test-approaches"]
-}

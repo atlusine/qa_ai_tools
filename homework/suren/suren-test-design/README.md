@@ -1,6 +1,6 @@
-# suren-qa-roles
+# suren-test-design
 
-A small Claude Code plugin: one main QA skill and four testing approaches.
+Test design and execution by testing type: one main QA skill and four testing approaches.
 Each agent loads the main skill plus the skill for its approach.
 
 ```
@@ -19,7 +19,7 @@ agent  =  qa-core  +  <approach skill>
 | `exploratory-tester` | `qa-core` + `exploratory-testing` | Ad hoc, time-boxed exploring to find bugs no test case covers |
 
 ```
-suren-qa-roles/
+suren-test-design/
 ├── .claude-plugin/plugin.json
 ├── skills/
 │   ├── qa-core/              main skill, shared by every agent
@@ -46,5 +46,5 @@ These come from the course plugins, so this plugin reuses them instead of copyin
 ## Install (after it's registered in the root marketplace)
 
 ```
-/plugin install suren-qa-roles@qa-ai-tools
+/plugin install suren-test-design@qa-ai-tools
 ```
