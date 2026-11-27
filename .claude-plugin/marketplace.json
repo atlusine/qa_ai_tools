@@ -23,6 +23,14 @@
       "version": "0.1.0",
       "category": "testing",
       "keywords": ["qa", "bugs", "bug-report", "jira", "investigation"]
+    },
+    {
+      "name": "qa-daily-flow",
+      "source": "./plugins/qa-daily-flow",
+      "description": "Daily QA flow: run the manual smoke suite in the browser and send the results as a report.",
+      "version": "0.1.0",
+      "category": "testing",
+      "keywords": ["qa", "smoke-tests", "daily", "report"]
     }
   ]
 }
