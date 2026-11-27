@@ -1,0 +1,9 @@
+{
+  "name": "qa-bug-retest",
+  "version": "0.1.0",
+  "description": "Daily QA flow: re-check every open Jira bug in the browser and report which are still happening, look fixed or changed.",
+  "author": {
+    "name": "Roza Barkhudaryan"
+  },
+  "keywords": ["qa", "bugs", "retest", "regression", "daily", "jira", "report"]
+}
