@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites name="pytest tests">
+  <testsuite name="unit" errors="0" failures="0" skipped="1" tests="4" time="0.42">
+    <testcase classname="tests.test_digest" name="test_dedupe" time="0.01"/>
+    <testcase classname="tests.test_digest" name="test_window" time="0.01"/>
+    <testcase classname="tests.test_telegram" name="test_send" time="0.01"/>
+    <testcase classname="tests.demo.test_demo_scenario" name="test_demo_skipped_example" time="0.00">
+      <skipped type="pytest.skip" message="demo">demo</skipped>
+    </testcase>
+  </testsuite>
+</testsuites>

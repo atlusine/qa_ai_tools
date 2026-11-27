@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AI Wire (fixture)</title>
+    <link>https://example.com/</link>
+    <description>Fixture feed A</description>
+    <item>
+      <title>Lab releases a new open reasoning model</title>
+      <link>https://example.com/news/model?utm_source=rss&amp;utm_medium=feed</link>
+      <pubDate>Wed, 25 Nov 2026 06:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Robotics startup raises Series B</title>
+      <link>https://example.com/news/robotics</link>
+      <pubDate>Tue, 24 Nov 2026 20:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Regulators publish AI guidance &amp; FAQ</title>
+      <link>https://example.com/news/ai-guidance</link>
+      <pubDate>Wed, 25 Nov 2026 03:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>An old story about chatbots</title>
+      <link>https://example.com/news/old</link>
+      <pubDate>Fri, 20 Nov 2026 10:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Undated item is ignored</title>
+      <link>https://example.com/news/undated</link>
+    </item>
+  </channel>
+</rss>

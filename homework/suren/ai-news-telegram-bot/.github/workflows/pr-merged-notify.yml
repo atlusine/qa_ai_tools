@@ -1,0 +1,37 @@
+name: Notify on merged pull request
+
+# Security notes
+# - pull_request_target runs the workflow file and code from the BASE (default) branch, which is
+#   trusted, reviewed code. It also gets secrets for PRs from forks.
+# - So we must NEVER check out or run the PR's code here: the checkout below has no `ref:`.
+# - Event data (title, branch names, users) is read by Python from $GITHUB_EVENT_PATH and sent as
+#   plain text. It is never placed in `run:` lines through ${{ }} expressions.
+on:
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  contents: read
+
+jobs:
+  notify-merged:
+    # Only merged PRs whose base is the default branch. Closed-without-merge PRs skip this job.
+    if: ${{ github.event.pull_request.merged == true && github.event.pull_request.base.ref == github.event.repository.default_branch }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out trusted default-branch code (not the PR head)
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Send Telegram message
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m notifier.github_events

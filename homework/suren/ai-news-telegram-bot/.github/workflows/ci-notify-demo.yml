@@ -1,0 +1,101 @@
+name: CI tests with Telegram summary (demo)
+
+# Runs the project's real pytest suite and sends a Telegram summary afterwards.
+# The `scenario` input simulates the three outcomes; all messages are labelled [DEMO].
+# To reuse in a real QA repo: copy the `notify` job, point `needs:` at your test job,
+# and expose the same two step outcomes from it (see README, "Reusing the notifier").
+
+on:
+  workflow_dispatch:
+    inputs:
+      scenario:
+        description: "Demo scenario"
+        type: choice
+        options: [success, test_failure, pipeline_failure]
+        default: success
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # This job runs test code and has NO access to Telegram secrets.
+    outputs:
+      setup_outcome: ${{ steps.setup.outcome }}
+      tests_outcome: ${{ steps.tests.outcome }}
+    env:
+      DEMO_SCENARIO: ${{ inputs.scenario }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies (setup)
+        id: setup
+        run: |
+          if [ "$DEMO_SCENARIO" = "pipeline_failure" ]; then
+            echo "::error::Simulated setup failure (demo scenario: pipeline_failure). Tests will not run."
+            exit 1
+          fi
+          pip install -r requirements-dev.txt
+
+      - name: Run tests
+        id: tests
+        run: python -m pytest --junitxml=reports/junit.xml
+
+      - name: Upload JUnit report
+        if: ${{ always() && hashFiles('reports/junit.xml') != '' }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: junit-report
+          path: reports/junit.xml
+          retention-days: 7
+
+  notify:
+    name: Telegram summary
+    needs: tests
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # Has the Telegram secrets, so it runs only this repository's notifier code and never
+    # installs or executes the code under test.
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Download JUnit report (may not exist)
+        continue-on-error: true
+        uses: actions/download-artifact@v5
+        with:
+          name: junit-report
+          path: reports
+
+      - name: Send Telegram summary
+        # A Telegram problem is logged as a warning but never changes the run's result;
+        # the tests job alone decides whether the run is green or red.
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CI_JOB_RESULT: ${{ needs.tests.result }}
+          CI_SETUP_OUTCOME: ${{ needs.tests.outputs.setup_outcome }}
+          CI_TESTS_OUTCOME: ${{ needs.tests.outputs.tests_outcome }}
+          CI_REPORT_PATH: reports/junit.xml
+          CI_SUITE: Unit tests (pytest)
+          CI_JOB: Unit tests
+          CI_DEMO: "true"
+          CI_SCENARIO: ${{ inputs.scenario }}
+        run: python -m notifier.ci_summary

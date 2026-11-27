@@ -1,0 +1,22 @@
+# Secrets: never commit real credentials
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Test reports
+reports/
+
+# Interactive bot logs
+*.log
+*.log.[0-9]*
+
+# IDE
+.idea/
+.vscode/

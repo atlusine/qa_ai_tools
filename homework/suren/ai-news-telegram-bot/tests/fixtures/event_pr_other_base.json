@@ -1,0 +1,15 @@
+{
+  "action": "closed",
+  "number": 44,
+  "pull_request": {
+    "number": 44,
+    "title": "Merge into release branch",
+    "html_url": "https://github.com/your-user/ai-news-telegram-bot/pull/44",
+    "merged": true,
+    "merged_by": {"login": "qa-lead"},
+    "user": {"login": "qa-lead"},
+    "head": {"ref": "hotfix"},
+    "base": {"ref": "release/1.x"}
+  },
+  "repository": {"full_name": "your-user/ai-news-telegram-bot", "default_branch": "main"}
+}
