@@ -1,0 +1,36 @@
+{
+  "name": "suren-qa",
+  "owner": {
+    "name": "Suren"
+  },
+  "metadata": {
+    "description": "Suren's QA plugins for Claude Code: test design, bug investigation and test automation by testing type.",
+    "version": "0.0.1"
+  },
+  "plugins": [
+    {
+      "name": "suren-test-design",
+      "source": "./suren-test-design",
+      "description": "Test design and execution by testing type (API, smoke, UAT, exploratory) on a shared qa-core skill.",
+      "version": "0.0.1",
+      "category": "testing",
+      "keywords": ["qa", "test-design", "testing-types"]
+    },
+    {
+      "name": "suren-bug-investigation",
+      "source": "./suren-bug-investigation",
+      "description": "Bug investigation by testing type on a shared bug-core skill that maps Jira fields and creates bugs after approval.",
+      "version": "0.0.1",
+      "category": "testing",
+      "keywords": ["qa", "bugs", "jira", "investigation"]
+    },
+    {
+      "name": "suren-automation",
+      "source": "./suren-automation",
+      "description": "Test automation skills and agents. Not yet implemented.",
+      "version": "0.0.1",
+      "category": "testing",
+      "keywords": ["qa", "automation"]
+    }
+  ]
+}

@@ -43,8 +43,11 @@ These come from the course plugins, so this plugin reuses them instead of copyin
 - Test case design: `qa-test-design:manual-test-cases`
 - Bug reports: `qa-bug-investigation:bug-report`
 
-## Install (after it's registered in the root marketplace)
+## Install on this PC
 
 ```
-/plugin install suren-test-design@qa-ai-tools
+claude plugin marketplace add C:\Users\Goya\PycharmProjects\qa_ai_tools\homework\suren
+claude plugin install suren-test-design@suren-qa
 ```
+
+After editing a skill: `claude plugin marketplace update suren-qa`, then restart Claude.

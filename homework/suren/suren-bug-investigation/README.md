@@ -29,3 +29,12 @@ type-specific investigation, so nothing is copied.
 - **Required:** Project, Issue Type, Summary
 - **Optional and used:** Description, Labels, Linked Issues, Attachment
 - **Not available:** Severity, Priority, Environment, so they go in the description
+
+## Install on this PC
+
+```
+claude plugin marketplace add C:\Users\Goya\PycharmProjects\qa_ai_tools\homework\suren
+claude plugin install suren-bug-investigation@suren-qa
+```
+
+After editing a skill: `claude plugin marketplace update suren-qa`, then restart Claude.
