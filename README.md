@@ -25,7 +25,7 @@ qa-ai-tools/
 ├── toolshop-automation/              # Playwright E2E framework for practicesoftwaretesting.com
 │   ├── CLAUDE.md                     # routes to rules / skills / commands / agents
 │   ├── .claude/                      # settings.json (hooks + permissions), rules, skills, commands, agents
-│   ├── scripts/claude-hooks/         # session-context · validate-edit · review-diff
+│   ├── scripts/claude-hooks/         # session-context · validate-edit · lint-before-commit · review-diff
 │   ├── tests/{smoke,regression}/     # 10 test cases (TC01–TC10)
 │   ├── module_object/  flows/  support/
 │   └── playwright.config.js

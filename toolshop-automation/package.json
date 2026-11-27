@@ -8,10 +8,15 @@
     "test:smoke": "playwright test --grep @smoke",
     "test:headed": "playwright test --headed",
     "report": "playwright show-report report",
-    "review": "bash scripts/claude-hooks/review-diff.sh"
+    "review": "bash scripts/claude-hooks/review-diff.sh",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@playwright/test": "^1.63.0",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "eslint": "^9.39.5",
+    "globals": "^17.14.0"
   }
 }

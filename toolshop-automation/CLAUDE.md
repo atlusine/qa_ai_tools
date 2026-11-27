@@ -64,6 +64,7 @@ npx playwright test --headed --workers=1           # watch it
 npx playwright show-report report                  # HTML report: screenshots, video, trace on failure
 npx playwright show-trace test-results/<dir>/trace.zip
 bash scripts/claude-hooks/review-diff.sh           # pre-commit gate (also: npm run review)
+npm run lint                                       # ESLint (also runs automatically before Claude commits)
 ```
 
 `BASE_URL` / `API_URL` point the suite at another deployment, for example the app's own `docker compose` stack:
@@ -84,7 +85,7 @@ CLAUDE.md                     This file: routes to rules and skills
   ├─ skills/                  3 workflows + 4 convention references
   ├─ commands/                /generate-test  /test-review  /investigate-failure
   └─ agents/                  test-generator · test-reviewer · failure-analyzer
-scripts/claude-hooks/         session-context · validate-edit · review-diff
+scripts/claude-hooks/         session-context · validate-edit · lint-before-commit · review-diff
 playwright.config.js          baseURL, testIdAttribute=data-test, retries 1, video/trace on failure
 tests/smoke/                  @smoke: login, search, add to cart        → own CLAUDE.md
 tests/regression/             @regression: catalog, auth, cart
