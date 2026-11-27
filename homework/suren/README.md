@@ -16,6 +16,12 @@ GitHub: [@surenarzanyan511-blip](https://github.com/surenarzanyan511-blip)
 |   | Bug investigation: `bug-core` (Jira fields + flow) and one bug skill per testing type | [`suren-bug-investigation/`](suren-bug-investigation/) | |
 |   | Automation (empty, for later) | [`suren-automation/`](suren-automation/) | |
 
+## Test reports
+
+| Date | Report | Result |
+|------|--------|--------|
+| 2026-11-27 | [Toolshop smoke test](reports/2026-11-27-toolshop-smoke/) | 7/7 passed, 0 defects |
+
 ## Contributions outside this folder
 
 None yet.
