@@ -26,9 +26,6 @@ None yet.
 
 ## Notes on the Telegram bot
 
-- The project was developed in its own repository and copied here with its full
-  file set (43 files), so it can be reviewed in one place. See its
-  [README](ai-news-telegram-bot/README.md) for setup, design and QA notes.
 - Tests: `cd homework/suren/ai-news-telegram-bot`, then
   `pip install -r requirements-dev.txt` and `python -m pytest`
   (79 passed, 1 skipped on purpose to demo skipped-test counting). All tests use
