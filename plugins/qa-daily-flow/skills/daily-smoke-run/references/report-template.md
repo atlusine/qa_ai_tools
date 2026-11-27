@@ -18,12 +18,12 @@ Sections, in order:
    | ID | Title | Verdict | Actual result | Screenshot | Notes / bug |
    |----|-------|---------|---------------|------------|-------------|
    | SMOKE-001 | Verify … | ✅ Pass | The Search field, Search button and X button are visible | thumbnail | — |
-   | SMOKE-006 | Verify … | ❌ Fail | "0 products found" text shown instead of "There are no products found." | thumbnail | Possible new bug |
+   | SMOKE-006 | Verify … | ❌ Fail | "0 products found" text shown instead of "There are no products found." | thumbnail | Possible bug |
 
    Clicking a thumbnail opens the full screenshot.
-4. **Failures and blocked cases:** for each one, the steps, expected, actual, the full screenshot, console errors and failed API calls, and the linked or suggested bug.
+4. **Failures and blocked cases:** for each one, the steps, expected, actual, the full screenshot, console errors and failed API calls.
 
-## Slack message (DM)
+## Chat summary
 
 Keep it short; the report has the detail.
 
@@ -39,4 +39,4 @@ Report: <artifact link>
 
 - List only failed and blocked cases, one line each: ID, short name, the difference.
 - When everything passes, the message is the first line, the suite line and the report link.
-- If the report couldn't be published, say so and include every case's verdict in the message instead.
+- If the report couldn't be published, say so and include every case's verdict in the summary instead.

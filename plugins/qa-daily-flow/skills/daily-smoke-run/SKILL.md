@@ -1,6 +1,6 @@
 ---
 name: daily-smoke-run
-description: Run a manual smoke test suite in the browser, record Pass / Fail / Blocked with a screenshot for every case, and deliver the results as an HTML report plus a short Slack summary. Use for the daily smoke check, "run the smoke tests", "is search still working?", or when building a smoke suite from a larger set of manual test cases.
+description: Run a manual smoke test suite in the browser, record Pass / Fail / Blocked with a screenshot for every case, and deliver the results as an HTML report with a short summary and the report link in the chat. Use for the daily smoke check, "run the smoke tests", "is search still working?", or when building a smoke suite from a larger set of manual test cases.
 ---
 
 # Daily Smoke Run
@@ -9,8 +9,8 @@ Execute a suite of **manual** smoke test cases exactly as written, the way a tes
 
 ## Inputs
 
-- **The suite.** A Markdown file under `smoke-tests/` (for example `smoke-tests/SCRUM-9-product-search-smoke.md`) or the Jira issue named **"Smoke tests"** in project SCRUM. If both exist and disagree, the Jira issue wins; mention the difference in the report.
-- **Where to deliver.** Default: publish the HTML report and DM the user on Slack. When run interactively without Slack, show the summary in chat.
+- **The suite.** A Markdown file under `smoke-tests/` (for example `smoke-tests/SCRUM-9-product-search-smoke.md`). The repo file is the source of truth; don't read the suite from Jira.
+- **Where to deliver.** Publish the HTML report as an artifact and post the summary with the report link in the chat. Use another channel (Slack, email) only when the user asks for it.
 
 ## Process
 
@@ -20,8 +20,8 @@ Execute a suite of **manual** smoke test cases exactly as written, the way a tes
 4. **Capture evidence.** For every case, take one screenshot of the screen that shows the expected result (scroll it into view first). Name it `<ID>-<pass|fail|blocked>.png`. For a failure, also note the console errors and any failed API call.
 5. **Decide the verdict** using the rules below, and write one sentence of **actual result** in the same words as the expected result.
 6. **Build the report** with the layout in `references/report-template.md`, embedding the screenshots.
-7. **Deliver.** Publish the report and send the Slack summary (`references/report-template.md`, *Slack message*). Put failures first in the message.
-8. **Follow up on failures.** Search Jira for an existing bug (text search on the feature and symptom, project SCRUM). If one exists, link it in the report. If not, list the failure as **Possible new bug** and suggest filing it with the `bug-report` skill. Don't create Jira issues from a scheduled run without a person confirming.
+7. **Deliver.** Publish the report and post the chat summary (`references/report-template.md`, *Chat summary*). Put failures first.
+8. **Follow up on failures.** List each failure as **Possible bug** and suggest filing it with the `bug-report` skill. Don't search or change Jira during a smoke run, and never create issues without a person confirming.
 
 ## Verdict rules
 
@@ -62,4 +62,5 @@ When asked to make a smoke suite from a full set of manual test cases (for examp
 - [ ] Failures quote the difference between expected and actual
 - [ ] Blocked is used only when a step couldn't be done, never for a wrong result
 - [ ] The report states the date and time (Asia/Yerevan), the app URL and the browser
-- [ ] Each failure is linked to an existing bug or listed as a possible new bug
+- [ ] Each failure is listed as a possible bug with the `bug-report` skill suggested
+- [ ] The chat summary ends with the report link
