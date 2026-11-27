@@ -7,7 +7,7 @@ Each agent loads the main skill plus the skill for its approach.
 agent  =  qa-core  +  <approach skill>
 ```
 
-> **Status:** structure only. Descriptions and content are TODO.
+> **Status:** `qa-core` has content. The 4 testing-type skills and the agents are structure only (TODO).
 
 ## What's inside
 
