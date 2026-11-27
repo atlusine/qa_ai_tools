@@ -23,6 +23,14 @@
       "version": "0.1.0",
       "category": "testing",
       "keywords": ["qa", "bugs", "bug-report", "jira", "investigation"]
+    },
+    {
+      "name": "qa-bug-retest",
+      "source": "./plugins/qa-bug-retest",
+      "description": "Daily QA flow: re-check every open Jira bug in the browser and report which are still happening, look fixed or changed.",
+      "version": "0.1.0",
+      "category": "testing",
+      "keywords": ["qa", "bugs", "retest", "regression", "daily", "jira", "report"]
     }
   ]
 }
